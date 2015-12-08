@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+  <meta name="viewport" content="width-device-width, initial-scale=1">
   <title>Blocmetrics</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <ul class="nav nav-pills navbar-right">
+        <li><%= link_to "Sign Up", "#", class: "btn btn-primary navbar-btn" %></li>
+        <li><%= link_to "Sign In", "#", class: "btn btn-primary navbar-btn" %></li>
+      </ul>
+    </div>
+  </nav>
+  <%= yield %>
 
 </body>
 </html>

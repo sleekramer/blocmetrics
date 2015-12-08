@@ -15,3 +15,18 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@keyframes fadeOut {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.alert {
+  animation: fadeOut 2700ms ease-in 0s 1 forwards;
+}
+
+.flash-container {
+  min-height: 5em;
+}

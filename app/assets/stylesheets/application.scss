@@ -30,3 +30,11 @@
 .flash-container {
   min-height: 5em;
 }
+
+a.root-link-nav {
+  color: rgb(146, 146, 146);
+  text-decoration: none;
+  :hover, :focus {
+    text-decoration: none;
+  }
+}

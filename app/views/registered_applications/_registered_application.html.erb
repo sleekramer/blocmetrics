@@ -1,0 +1,8 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h1 class="panel-title"><%= link_to "#{registered_application.name}", user_registered_application_path(current_user, registered_application) %><small class="pull-right">Tracked for <%= time_ago_in_words(registered_application.created_at) %></small></h1>
+  </div>
+  <div class="panel-body">
+    URL: <%= registered_application.url %></br>
+  </div>
+</div>

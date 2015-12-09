@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="page-header">
+        <h1><%= @registered_application.name %>: </br>
+          <small>
+            <%= @registered_application.url %></br>
+            Tracked for: <%= time_ago_in_words(@registered_application.created_at) %>
+            <span class="pull-right">
+              <%= link_to "Edit App", edit_user_registered_application_path(current_user, @registered_application), class:'btn btn-default' %>&nbsp;
+              <%= link_to "Delete App", [current_user, @registered_application], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this appplication?'} %>
+            </span>
+          </small>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>

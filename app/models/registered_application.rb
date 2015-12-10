@@ -3,5 +3,5 @@ class RegisteredApplication < ActiveRecord::Base
   has_many :events
 
   validates :name, presence: true, length: {minimum: 3}
-  validates :url, presence: true, length: {minimum: 10}, uniqueness: true, format: { with: /\A(https?:\/\/)([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w$%=?#\.-]*)\z/ }
+  validates :url, presence: true, length: {minimum: 10}, uniqueness: true, format: { with: /\A(https?:\/\/)([\da-z\.-]+)(\.[a-z\.]{2,6}|:\d{2,4})([\/\w$%=?#\.-]*)\z/ }
 end

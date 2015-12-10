@@ -13,6 +13,11 @@
           </small>
         </h1>
       </div>
+        <ul>
+        <% @events.each do |name, events| %>
+          <li><h4><%= name %></h4><small>Count: <%= events.count %></small></li>
+        <% end %>
+        </ul>
     </div>
   </div>
 </div>

@@ -1,8 +1,12 @@
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" %>
+<%= javascript_include_tag "http://code.highcharts.com/highcharts.js" %>
+<%= javascript_include_tag "chartkick" %>
+
 <div class="container">
   <div class="row">
     <div class="col-md-8">
       <div class="page-header">
-        <h1><%= @registered_application.name %>: </br>
+        <h1><%= @registered_application.name %> </br>
           <small>
             <%= @registered_application.url %></br>
             Tracked for: <%= time_ago_in_words(@registered_application.created_at) %>
@@ -13,11 +17,8 @@
           </small>
         </h1>
       </div>
-        <ul>
-        <% @events.each do |name, events| %>
-          <li><h4><%= name %></h4><small>Count: <%= events.count %></small></li>
-        <% end %>
-        </ul>
+      <%= pie_chart @registered_application.events.group(:name).count %>
+      <%= line_chart @registered_application.events.group('date("events"."created_at","start of day")').count %>
     </div>
   </div>
 </div>

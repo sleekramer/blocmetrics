@@ -11,10 +11,11 @@ end
 registered_applications = RegisteredApplication.all
 events = ["login", "logout", "item created", "picture clicked", "item deleted", "item edited", "page visited", "link clicked"]
 200.times do
-  Event.create!(
+  event = Event.create!(
     name: events.sample,
     registered_application: registered_applications.sample
   )
+  event.update_attribute(:created_at, rand(0.day .. 1.month).ago)
 end
 
 puts "Finished."

@@ -1,0 +1,17 @@
+<h4 class="navbar-text navbar-left">
+  <%= link_to "Blocmetrics", root_path, class:'root-link-nav'%>
+</h4>
+<% unless user_signed_in? %>
+  <ul class="nav nav-pills navbar-right">
+    <li><%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary navbar-btn" %></li>
+    <li><%= link_to "Sign In", new_user_session_path, class: "btn btn-default navbar-btn" %></li>
+  </ul>
+<% else %>
+  <div class=" navbar-right">
+    <h5 class"navbar-text">
+      Signed in as: <%= current_user.username %>
+      <%= link_to "Edit Account", edit_user_registration_path, class: "btn btn-primary" %>
+      <%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-default", method: :delete %>
+    </h5
+  </div>
+<% end %>

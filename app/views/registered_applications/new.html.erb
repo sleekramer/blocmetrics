@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Register an application</h2>
+      <ul>
+        <li>Name the application to be registered</li>
+        <li>Supply the unique url for your application(must include "http(s)://")</li>
+      </ul>
+      <%= render partial: 'registered_applications/form', locals: { user: @user, registered_application: @registered_application} %>
+    </div>
+  </div>
+</div>
